@@ -1,0 +1,1163 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "search": "Search",
+    "actions": "Actions",
+    "status": "Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "yes": "Yes",
+    "no": "No",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "account": "Account",
+    "myAccount": "My Account",
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "about": "About",
+    "contact": "Contact",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "language": "Language",
+    "upload": "Upload",
+    "previous": "Previous",
+    "next": "Next",
+    "total": "Total",
+    "noResults": "No results found",
+    "tryDifferent": "Try different keywords",
+    "results": "Search results",
+    "pageOf": "Page",
+    "sortBy": "Sort By",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "priceLowHigh": "Price: Low to High",
+    "priceHighLow": "Price: High to Low",
+    "show": "Show Products",
+    "numberOfProducts": "Number of Products",
+    "all": "All",
+    "categories": "Categories",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "help": "Help",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "backToTop": "Back to Top",
+    "refresh": "Refresh",
+    "close": "Close",
+    "confirm": "Confirm",
+    "warning": "Warning",
+    "info": "Information",
+    "success": "Success",
+    "error": "Error",
+    "view": "View",
+    "back": "Back",
+    "off": "off"
+  },
+  "account": {
+    "security": "Security",
+    "superAdmin": "Super Admin",
+    "editProfilePhoto" : "Edit Profile Photo",
+    "user": "User",
+    "tabs": {
+      "profile": "Profile",
+      "orders": "Orders"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your account settings.",
+      "username": "Username",
+      "email": "Email"
+    },
+    "orders": {
+      "title": "My Orders",
+      "description": "View your order history.",
+      "empty": "You have no orders.",
+      "order": "Order",
+      "orderDetails": "Order Details",
+      "shippingAddress": "Shipping Address",
+      "totalAmount": "Total Amount",
+      "status": "Status",
+      "items": "Items",
+      "product": "Product",
+      "quantity": "Quantity",
+      "price": "Price",
+      "date": "Date"
+    },
+    "general": {
+      "back": "Back",
+      "name": "Name",
+      "role": "Account Type",
+      "joinDate": "Join Date",
+      "memberSince": "Member since",
+      "googleAccount": "Google Account",
+      "localAccount": "Local Account",
+      "security": "Security",
+      "superAdmin": "Super Admin",
+      "user": "User",
+      "notSpecified": "Not specified",
+      "saving": "Saving...",
+      "manageGoogleAccount": "Manage Google Account",
+      "passwordManagedByGoogle": "Your password is managed through Google. To change your password, please visit your Google account settings.",
+      "noOrdersYet": "No orders yet",
+      "startShopping": "Start Shopping"
+    }
+  },
+  "forms": {
+    "required": "This field is required",
+    "email": {
+      "invalid": "Invalid email address"
+    },
+    "password": {
+      "minLength": "Password must be at least 6 characters long"
+    }
+  },
+  "info": {
+    "addImageUrl": "Add Image URL",
+    "description": "Description",
+    "image": "Image"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "signOut": "Sign Out",
+    "signIn": "Sign In",
+    "signUp" : "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "username": "Username",
+    "loginButton": "Sign In",
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to continue"
+  },
+  "dashboard": {
+    "title": "Dashboard Overview",
+    "revenue_over_time": "Revenue Over Time",
+    "database_info": "The data shown reflects real information from the database",
+    "stats": {
+      "total_revenue": "Total Revenue",
+      "total_orders": "Total Orders",
+      "total_customers": "Total Customers",
+      "total_products": "Total Products"
+    },
+    "recent_orders": {
+      "title": "Recent Orders",
+      "view_all": "View All Orders"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "open": "Open Menu",
+    "close": "Close Menu"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "products": "Products",
+    "categories": "Categories",
+    "orders": "Orders",
+    "users": "Users",
+    "coupons": "Coupons",
+    "cart": "Cart",
+    "reviews": "Reviews",
+    "gallery": "Gallery",
+    "profile": "Profile"
+  },
+  "products": {
+    "title": "Products",
+    "addProduct": "Add Product",
+    "editProduct": "Edit Product",
+    "name": "Name",
+    "nameEn": "Name (English)",
+    "nameAr": "Name (Arabic)",
+    "slug": "Slug",
+    "sku": "SKU",
+    "description": "Description",
+    "descriptionEn": "Description (English)",
+    "descriptionAr": "Description (Arabic)",
+    "price": "Price",
+    "addPrice": "Add Price",
+    "discount": "Discount",
+    "discountType": "Discount Type",
+    "discountValue": "Discount Value",
+    "quantity": "Quantity in Stock",
+    "brand": "Brand",
+    "featured": "Featured Product",
+    "size": "Size",
+    "material": "Material",
+    "materialAr": "Material (Arabic)",
+    "badge": "Badge",
+    "badgeAr": "Badge (Arabic)",
+    "weight": "Weight",
+    "dimensions": "Dimensions",
+    "category": "Category",
+    "color": "Color",
+    "image": "Main Image",
+    "images": "Multiple Images",
+    "imageMainUpload": "Upload Main Image",
+    "relatedProducts": "Related Products",
+    "allBrands": "All Brands",
+    "priceRange": "Price Range",
+    "manageProducts": "Manage your store products",
+    "searchPlaceholder": "Search products...",
+    "productsList": "Products List",
+    "productsCount": "products",
+    "productDetails": "Product details",
+    "addProductDescription": "Add a new product to your store",
+    "editProductDescription": "Edit product information",
+    "productImage": "Product Image",
+    "noImage": "No image",
+    "basicInfo": "Basic Information",
+    "pricingInventory": "Pricing & Inventory",
+    "featuredProduct": "Featured Product",
+    "statusNew": "New",
+    "statusOnSale": "On Sale",
+    "statusBestSeller": "Best Seller",
+    "statusComingSoon": "Coming Soon",
+    "statusNormal": "Normal",
+    "noProducts": "No products found",
+    "confirmDelete": "Are you sure you want to delete this product?",
+    "confirmDeleteTitle": "Confirm Delete",
+    "deleteWarning": "This action cannot be undone.",
+    "showingProducts": "Showing",
+    "page": "Page",
+    "of": "of",
+    "productDeleted": "Product deleted successfully",
+    "productUpdated": "Product updated successfully",
+    "productCreated": "Product created successfully"
+  },
+  "categories": {
+    "title": "Categories",
+    "addCategory": "Add Category",
+    "editCategory": "Edit Category",
+    "name": "Name",
+    "nameEn": "Name (English)",
+    "nameAr": "Name (Arabic)",
+    "slug": "Slug",
+    "image": "Image",
+    "category": "Category",
+    "allCategories": "All Categories"
+  },
+  "users": {
+    "title": "Users",
+    "addUser": "Add User",
+    "editUser": "Edit User",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "address": "Address",
+    "phoneNumber": "Phone Number",
+    "role": "Role",
+    "superAdmin": "Super Admin",
+    "viewer": "operator",
+    "user" : "client"
+  },
+  "orders": {
+    "title": "Orders",
+    "subtitle": "Manage customer orders and track their status",
+    "ordersManagement": "Orders Management",
+    "orderId": "Order ID",
+    "customer": "Customer",
+    "totalAmount": "Total Amount",
+    "status": "Status",
+    "createdAt": "Created At",
+    "date": "Date",
+    "items": "Items",
+    "searchOrders": "Search Orders",
+    "searchPlaceholder": "Search by order ID, customer name, email, or status...",
+    "ordersFound": "order",
+    "ordersFounds": "orders found",
+    "searchLabel": "Search:",
+    "noOrdersFound": "No orders found matching your search.",
+    "noOrders": "No orders found.",
+    "paymentStatus": "Payment Status",
+    "coupon": "Coupon",
+    "noCoupon": "No coupon",
+    "actions": "Actions",
+    "view": "View",
+    "delete": "Delete",
+    "orderDeleted": "Order deleted",
+    "orderDeletedDesc": "The order has been successfully deleted.",
+    "error": "Error",
+    "deleteError": "Failed to delete order.",
+    "unexpectedError": "An unexpected error occurred.",
+    "backToOrders": "Back to Orders",
+    "printInvoice": "Print Invoice",
+    "orderNumber": "Order #",
+    "createdOn": "Created on",
+    "orderDetails": "Order Details",
+    "pricingDetails": "Pricing Details",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "discount": "Discount",
+    "total": "Total",
+    "customerInfo": "Customer Information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "shippingAddress": "Shipping Address",
+    "orderItems": "Order Items",
+    "quantity": "Quantity",
+    "paymentInfo": "Payment Information",
+    "paymentMethod": "Payment Method",
+    "shippingMethod": "Shipping Method",
+    "internalNotes": "Internal Notes",
+    "addNotePlaceholder": "Add a note for your team...",
+    "addNote": "Add Note",
+    "noNotes": "No internal notes for this order yet.",
+    "noteAdded": "Note added.",
+    "success": "Success",
+    "changeStatus": "Change status",
+    "statusUpdated": "Order status updated.",
+    "statusPending": "Pending",
+    "statusProcessing": "Processing",
+    "statusShipped": "Shipped",
+    "statusDelivered": "Delivered",
+    "statusCancelled": "Cancelled",
+    "paymentPending": "Pending",
+    "paymentPaid": "Paid",
+    "paymentFailed": "Failed",
+    "invoice": "Invoice",
+    "billTo": "Bill To",
+    "invoiceDate": "Invoice Date",
+    "orderDate": "Order Date",
+    "item": "Item",
+    "price": "Price",
+    "thankYou": "Thank you for your business!",
+    "companyName": "Dubai for Import, Export, and Commercial Agencies",
+    "companyAddress": "Shebin El-Kom, 21 Al-Amin Street"
+  },
+  "coupons": {
+    "title": "Coupons",
+    "addCoupon": "Add Coupon",
+    "editCoupon": "Edit Coupon",
+    "code": "Code",
+    "discountType": "Discount Type",
+    "discountValue": "Discount Value",
+    "fixed": "Fixed",
+    "percentage": "Percentage",
+    "expiryDate": "Expiry Date"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search for products...",
+    "results": "Search results",
+    "noResults": "No products found",
+    "tryDifferent": "Try adjusting your search or filters",
+    "pageOf": "Page",
+    "total": "Total",
+    "filters": "Filters",
+    "clear": "Clear Filters",
+    "clearAll": "Clear All",
+    "apply": "Apply",
+    "productsFound": "Products Found:",
+    "sortBy": "Sort By",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "priceLowHigh": "Price: Low to High",
+    "priceHighLow": "Price: High to Low",
+    "show": "Show Products",
+    "numberOfProducts": "Number of Products",
+    "all": "All Products",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "onSale": "On Sale",
+    "priceRange": "Price Range",
+    "availability": "Availability",
+    "filter": "Advanced Search"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Manage and organize your images",
+    "addGallery": "Add Gallery",
+    "editGallery": "Edit Gallery",
+    "editImage": "Edit Image",
+    "editImageDetails": "Edit Image Details",
+    "name": "Name",
+    "nameEn": "Name (English)",
+    "nameAr": "Name (Arabic)",
+    "slug": "Slug",
+    "image": "Image",
+    "gallery": "Gallery",
+    "allGalleries": "All Galleries",
+    "searchPlaceholder": "Search for images...",
+    "uploadImages": "Upload Images",
+    "totalImages": "Total Images",
+    "availableTags": "Available Tags",
+    "featuredImages": "Featured Images",
+    "filters": "Filters",
+    "filterByTags": "Filter by Tags",
+    "activeTags": "Active Tags:",
+    "clearAll": "Clear All",
+    "selectAll": "Select All",
+    "selected": "Selected",
+    "previous": "Previous",
+    "next": "Next",
+    "pageInfo": "Page Info",
+    "grid": "Grid",
+    "list": "List",
+    "confirmDelete": "Are you sure you want to delete this image?",
+    "deleteSuccess": "Image deleted successfully",
+    "deleteError": "Failed to delete image",
+    "uploadSuccess": "Images uploaded successfully",
+    "uploadError": "Failed to upload images",
+    "updateSuccess": "Image updated successfully",
+    "updateError": "Failed to update image",
+    "noImages": "No images found",
+    "loadingImages": "Loading images...",
+    "dragAndDrop": "Drag & drop files here",
+    "orClickToSelect": "or click to select files",
+    "acceptedFormats": "Accepted formats:",
+    "dropFilesHere": "Drop files here",
+    "selectedFiles": "Selected Files",
+    "noFilesSelected": "No files selected yet. Use the dropzone to add files.",
+    "titleEnglish": "Title (English)",
+    "titleArabic": "Title (Arabic)",
+    "altTextEnglish": "Alt Text (English)",
+    "altTextArabic": "Alt Text (Arabic)",
+    "tags": "Tags",
+    "addTag": "Add a tag then press Enter",
+    "addTagButton": "Add",
+    "featured": "Featured",
+    "default": "Default",
+    "uploading": "Uploading...",
+    "uploaded": "Uploaded",
+    "pending": "Pending",
+    "upload": "Upload",
+    "uploadMultiple": "Upload {count} Image",
+    "uploadMultiplePlural": "Upload {count} Images",
+    "clearUploaded": "Clear Uploaded",
+    "noPreview": "No preview",
+    "imagesUploaded": "{count} uploaded",
+    "imagesPending": "{count} pending",
+    "notInDatabase": "This image is not in the database — editing is only available for images stored in the DB.",
+    "noImageData": "No image data to save.",
+    "saveChanges": "Save Changes",
+    "searchTags": "Search tags...",
+    "noTagsFound": "No tags found matching your search",
+    "noTagsAvailable": "No tags available",
+    "view": "View",
+    "copyUrl": "Copy URL",
+    "download": "Download",
+    "sizeUnknown": "Size unknown",
+    "unknownDate": "Unknown date"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "emptyCart": "Your cart is empty",
+    "emptyCartDescription": "Looks like you haven't added any items to your cart yet",
+    "startShopping": "Start Shopping",
+    "loginRequired": "Please login to view your cart",
+    "items": "items",
+    "products": "Products",
+    "pricesIncludeVAT": "Prices include VAT",
+    "orderSummary": "Order Summary",
+    "acceptedPaymentMethods": "Accepted Payment Methods",
+    "removeOutOfStockItems": "Please remove out-of-stock items to continue",
+    "outOfStock": "Out of Stock",
+    "securePayment": "Secure Payment",
+    "sslProtection": "256-bit SSL protection",
+    "fastShipping": "Fast Shipping",
+    "deliveryTime": "1-3 day delivery",
+    "multiplePayment": "Multiple Payment",
+    "paymentOptions": "Visa, MC, PayPal",
+    "addToCart": "Add to Cart",
+    "removeFromCart": "Remove from Cart",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "continueShopping": "Continue Shopping"
+  },
+  "wishlist": {
+    "title": "Wishlist",
+    "emptyWishlist": "Your wishlist is empty",
+    "emptyWishlistDescription": "You haven't added any products to your wishlist yet",
+    "startBrowsing": "Start Browsing",
+    "loginRequired": "Please login to view your wishlist",
+    "items": "items",
+    "addToWishlist": "Add to Wishlist",
+    "removeFromWishlist": "Remove from Wishlist",
+    "addAllToCart": "Add All to Cart",
+    "clearWishlist": "Clear Wishlist",
+    "moveToCart": "Move to Cart",
+    "productAdded": "Added to wishlist",
+    "productRemoved": "Removed from wishlist",
+    "alreadyInWishlist": "Product already in wishlist",
+    "confirmClear": "Are you sure you want to clear all products from wishlist?",
+    "itemsMovedToCart": "All items moved to cart",
+    "viewWishlist": "View Wishlist",
+    "saveForLater": "Save for Later"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "billingInfo": "Billing Information",
+    "shippingInfo": "Shipping Information",
+    "paymentMethod": "Payment Method",
+    "orderSummary": "Order Summary",
+    "placeOrder": "Place Order",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "address": "Address",
+    "city": "City",
+    "postalCode": "Postal Code",
+    "country": "Country"
+  },
+  "errors": {
+    "generic": "An unexpected error occurred",
+    "networkError": "Network connection error",
+    "serverError": "Server error",
+    "timeout": "Connection timeout",
+    "unauthorized": "Unauthorized access",
+    "forbidden": "Access forbidden",
+    "notFound": "Page not found",
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address",
+      "passwordTooShort": "Password is too short (minimum 6 characters)",
+      "passwordsNotMatch": "Passwords do not match",
+      "invalidPhoneNumber": "Invalid phone number",
+      "invalidUrl": "Invalid URL",
+      "invalidDate": "Invalid date",
+      "minLength": "Minimum length is {min} characters",
+      "maxLength": "Maximum length is {max} characters",
+      "minValue": "Value must be greater than {min}",
+      "maxValue": "Value must be less than {max}"
+    }
+  },
+  "notifications": {
+    "success": {
+      "saved": "Successfully saved",
+      "updated": "Successfully updated",
+      "deleted": "Successfully deleted",
+      "created": "Successfully created",
+      "sent": "Successfully sent",
+      "uploaded": "Successfully uploaded"
+    },
+    "info": {
+      "loading": "Loading...",
+      "processing": "Processing...",
+      "saving": "Saving...",
+      "uploading": "Uploading...",
+      "connecting": "Connecting..."
+    },
+    "warning": {
+      "unsavedChanges": "You have unsaved changes",
+      "lowStock": "Low stock",
+      "slowConnection": "Slow connection",
+      "sessionExpiring": "Your session will expire soon"
+    }
+  },
+  "dialogs": {
+    "confirm": {
+      "delete": "Are you sure you want to delete this item?",
+      "logout": "Are you sure you want to logout?",
+      "unsavedChanges": "You have unsaved changes. Do you want to continue?",
+      "cancel": "Do you want to cancel this operation?"
+    },
+    "titles": {
+      "confirmation": "Confirmation",
+      "warning": "Warning",
+      "error": "Error",
+      "information": "Information"
+    },
+    "buttons": {
+      "ok": "OK",
+      "cancel": "Cancel",
+      "yes": "Yes",
+      "no": "No",
+      "save": "Save",
+      "delete": "Delete",
+      "continue": "Continue",
+      "goBack": "Go Back"
+    }
+  },
+  "cms": {
+    "home": {
+      "hero": {
+        "badge": "Best E-Commerce 2024",
+        "title": "Dubai Trades - Your First Choice for Quality",
+        "description": "Discover premium products at competitive prices with exceptional customer service. Shop with confidence and security with our quality guarantee",
+        "ctaPrimary": "Start Shopping",
+        "ctaSecondary": "Watch Video",
+        "stats": {
+          "customers": "Happy Customers",
+          "products": "Products Sold",
+          "rating": "Average Rating"
+        }
+      },
+      "discountedProducts": {
+        "title": "Special Deals & Exclusive Discounts",
+        "subtitle": "Discover the best deals and discounts on our featured products - Save now before the offer ends!",
+        "viewAll": "View All Deals",
+        "upTo": "Up to 70% OFF"
+      },
+      "features": {
+        "title": "Features That Make Us The Best",
+        "subtitle": "We provide a complete shopping experience that combines high quality, excellent service and competitive prices",
+        "items": [
+          {
+            "title": "Free Shipping",
+            "description": "Free shipping on orders over $50",
+            "badge": "Popular"
+          },
+          {
+            "title": "100% Secure Payment",
+            "description": "Advanced SSL protection",
+            "badge": "Secure"
+          },
+          {
+            "title": "Easy Returns",
+            "description": "Within 30 days, no questions",
+            "badge": "Flexible"
+          },
+          {
+            "title": "24/7 Support",
+            "description": "Expert team always available",
+            "badge": "Fast"
+          },
+          {
+            "title": "Fast Delivery",
+            "description": "Delivery within 24 hours in major cities",
+            "badge": "Quick"
+          },
+          {
+            "title": "Gifts & Offers",
+            "description": "Special offers and ongoing promotions",
+            "badge": "Special"
+          }
+        ],
+        "bottomCta": {
+          "title": "Over 1M+ Satisfied Customers",
+          "description": "Join us today and experience the difference"
+        }
+      },
+      "testimonials": {
+        "title": "What Our Customers Say",
+        "subtitle": "We pride ourselves on serving thousands of happy customers. Here's what they say about their experience with us.",
+        "stats": {
+          "customers": "Happy Customers",
+          "rating": "Average Rating",
+          "satisfaction": "Satisfaction",
+          "support": "Support"
+        }
+      },
+      "trustIndicators": {
+        "title": "Shop with Complete Confidence",
+        "subtitle": "We are committed to protecting your privacy and providing the best secure and reliable shopping experience",
+        "items": [
+          {
+            "title": "Guaranteed Security",
+            "description": "Advanced protection for your personal and financial data"
+          },
+          {
+            "title": "Fast Delivery",
+            "description": "Delivery within 24 hours in most areas"
+          },
+          {
+            "title": "Easy Returns",
+            "description": "Free returns within 30 days, no questions asked"
+          },
+          {
+            "title": "High Quality",
+            "description": "Authentic products from trusted brands"
+          },
+          {
+            "title": "Customer Support",
+            "description": "Specialized support team available 24/7"
+          },
+          {
+            "title": "Satisfaction Guaranteed",
+            "description": "Complete customer satisfaction guarantee"
+          }
+        ],
+        "badges": {
+          "ssl": "Secure",
+          "pci": "Compliant",
+          "trusted": "Trusted"
+        }
+      }
+    },
+    "categories": {
+      "title": "Categories",
+      "description": "Discover our wide range of diverse categories"
+    },
+    "products": {
+      "title": "Products",
+      "description": "Browse all our diverse products"
+    },
+    "offers": {
+      "title": "Offers & Discounts",
+      "description": "Discover the latest exclusive offers and discounts"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Read the latest articles and tips from our experts"
+    },
+    "howToBuy": {
+      "title": "How to Shop",
+      "description": "Comprehensive step-by-step guide for the perfect shopping experience",
+      "shoppingGuide": "Shopping Guide",
+      "stepByStep": "Step-by-Step Shopping Process",
+      "whyChoose": "Why Choose Our Store?",
+      "moreQuestions": {
+        "title": "Have More Questions?",
+        "description": "Our support team is available to help you anytime. Don't hesitate to reach out"
+      }
+    },
+    "paymentMethods": {
+      "title": "Payment Methods",
+      "description": "Learn about our secure and available payment methods",
+      "paymentMethodsLabel": "Payment Methods",
+      "chooseMethod": "Choose Your Payment Method",
+      "securityProtection": "Security & Protection",
+      "methods": {
+        "creditCard": {
+          "description": "Pay securely with your credit or debit card. We accept all major credit cards with the highest security standards."
+        },
+        "applePay": {
+          "name": "Apple Pay",
+          "description": "Fast and secure payment with your Apple device. One-touch checkout with Face ID or Touch ID."
+        },
+        "googlePay": {
+          "name": "Google Pay",
+          "description": "Simple and secure payment with your Google account. Quick checkout with just a few taps."
+        },
+        "bankTransfer": {
+          "name": "Bank Transfer",
+          "description": "Direct transfer from your bank account. Secure and reliable payment method for larger orders."
+        },
+        "paypal": {
+          "name": "PayPal",
+          "description": "Pay with your PayPal account or link your credit card. Buyer protection included with every purchase."
+        },
+        "instant": "Instant",
+        "businessDays": "Business Days",
+        "popular": "Popular"
+      },
+      "security": {
+        "ssl": {
+          "title": "SSL Encryption",
+          "description": "All transactions are encrypted with 256-bit SSL technology to protect your sensitive information."
+        },
+        "pci": {
+          "title": "PCI Compliant",
+          "description": "We follow strict PCI DSS standards to ensure your payment data is stored and processed securely."
+        },
+        "twoFactor": {
+          "title": "Two-Factor Authentication",
+          "description": "Additional layer of security with 2FA for all payment transactions to prevent unauthorized access."
+        },
+        "global": {
+          "title": "Global Payment Security",
+          "description": "We partner with leading payment processors worldwide to ensure secure transactions everywhere."
+        }
+      },
+      "paymentFaq": {
+        "title": "Payment Questions?",
+        "description": "Find answers to common questions about our payment process and security measures.",
+        "isSecure": {
+          "question": "Is it safe to pay on your site?",
+          "answer": "Yes, absolutely! We use industry-standard SSL encryption and PCI DSS compliance to protect all payment information. Your data is never stored on our servers."
+        },
+        "availableMethods": {
+          "question": "What payment methods do you accept?",
+          "answer": "We accept all major credit cards (Visa, Mastercard, American Express), PayPal, Apple Pay, Google Pay, and bank transfers for your convenience."
+        },
+        "whenCharged": {
+          "question": "When will I be charged?",
+          "answer": "Your payment method will be charged immediately after you place your order. You'll receive a confirmation email with payment details."
+        },
+        "canCancel": {
+          "question": "Can I cancel my payment?",
+          "answer": "Yes, you can cancel your order within 24 hours of purchase. After this period, please contact our customer service team for assistance."
+        }
+      }
+    },
+    "shipping": {
+      "title": "Shipping & Delivery",
+      "description": "Comprehensive information about shipping options and delivery",
+      "shippingDelivery": "Shipping & Delivery",
+      "availableOptions": "Available Shipping Options",
+      "deliveryZones": "Delivery Zones",
+      "features": "Shipping Features",
+      "options": {
+        "express": {
+          "name": "Express Shipping",
+          "time": "1-2 Business Days",
+          "cost": "Starting from $15",
+          "description": "Get your order delivered quickly with our express shipping service. Perfect for urgent orders within major cities."
+        },
+        "standard": {
+          "name": "Standard Shipping",
+          "time": "3-5 Business Days",
+          "cost": "Starting from $8",
+          "description": "Reliable and affordable shipping option for all your regular orders. Free shipping on orders over $50."
+        },
+        "international": {
+          "name": "International Shipping",
+          "time": "7-14 Business Days",
+          "cost": "Starting from $25",
+          "description": "We ship worldwide with trusted carriers. Customs fees may apply depending on your country."
+        }
+      },
+      "zones": {
+        "local": {
+          "zone": "Local Zone",
+          "time": "1-2 Days",
+          "cost": "Free Shipping",
+          "areas": "Shebin El-Kom، Tanta، Ashmoun، Menouf، Quesna، Menoufia"
+        },
+        "main": {
+          "zone": "Main Cities",
+          "time": "2-3 Days",
+          "cost": "$8",
+          "areas": "Cairo، Alexandria، Giza، Mansoura، Zagazig، Ismailia، Suez"
+        },
+        "remote": {
+          "zone": "Remote Areas",
+          "time": "4-7 Days",
+          "cost": "$15",
+          "areas": "Upper Egypt، Red Sea، South Sinai، New Valley، Matrouh"
+        }
+      },
+      "shippingFeatures": {
+        "tracking": {
+          "title": "Real-Time Tracking",
+          "description": "Track your shipment in real-time with our advanced tracking system"
+        },
+        "packaging": {
+          "title": "Secure Packaging",
+          "description": "All orders are carefully packaged to ensure safe delivery"
+        },
+        "guarantee": {
+          "title": "Delivery Guarantee",
+          "description": "If your order doesn't arrive on time, we'll refund your shipping costs"
+        },
+        "premium": {
+          "title": "Premium Service",
+          "description": "Enjoy white-glove service with signature delivery and special handling"
+        }
+      },
+      "questionsAbout": {
+        "title": "Questions About Shipping?",
+        "description": "Our customer service team is here to help you with any shipping inquiries. Contact us anytime!"
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Learn more about our company and mission",
+      "hero": {
+        "title": "Dubai for Import, Export, and Commercial Agencies - Your Trusted Trading Partner",
+        "description": "We're passionate about creating exceptional trading experiences that connect businesses with their customers in Shebin El-Kom, Egypt, and the Arab world."
+      },
+      "features": {
+        "quickResponse": {
+          "title": "Quick Response",
+          "description": "We respond to all inquiries within 24 hours"
+        },
+        "professionalSupport": {
+          "title": "Professional Support",
+          "description": "Our expert team is here to help you succeed"
+        },
+        "globalReach": {
+          "title": "Global Reach",
+          "description": "Supporting customers worldwide with local expertise"
+        }
+      },
+      "supportChannels": {
+        "phone": {
+          "title": "Phone Support",
+          "description": "Call us for immediate assistance",
+          "action": "Call Now"
+        },
+        "email": {
+          "title": "Email Support",
+          "description": "Send us your questions via email",
+          "action": "Send Email"
+        },
+        "liveChat": {
+          "title": "Live Chat",
+          "description": "Chat with our support team",
+          "action": "Start Chat"
+        }
+      },
+      "mission": {
+        "title": "Our Mission",
+        "description": "To empower businesses with cutting-edge e-commerce solutions that drive growth and deliver exceptional customer experiences."
+      },
+      "values": {
+        "title": "Our Values",
+        "innovation": {
+          "title": "Innovation",
+          "description": "We constantly push the boundaries of what's possible in e-commerce technology."
+        },
+        "quality": {
+          "title": "Quality",
+          "description": "We deliver products and services that exceed expectations and stand the test of time."
+        },
+        "customer": {
+          "title": "Customer Focus",
+          "description": "Our customers are at the heart of everything we do, driving our decisions and innovations."
+        }
+      },
+      "stats": {
+        "happyCustomers": "Happy Customers",
+        "yearsExperience": "Years Experience",
+        "productsSold": "Products Sold",
+        "successRate": "Success Rate"
+      },
+      "cta": {
+        "title": "Ready to Start Your Journey?",
+        "description": "Join thousands of satisfied customers and experience the future of e-commerce",
+        "primaryButton": "Get Started",
+        "secondaryButton": "Learn More"
+      },
+      "team": {
+        "title": "Our Team",
+        "description": "Meet the passionate individuals behind our success"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with our team",
+      "form": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "Failed to send message. Please try again."
+      },
+      "info": {
+        "title": "Get in Touch",
+        "description": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "hours": "Business Hours"
+      },
+      "office": {
+        "title": "Our Office",
+        "address": "Shebin El-Kom, 21 Al-Amin Street",
+        "phone": "0123414243 / 01557777139",
+        "email": "info@dubai-trades.com",
+        "hours": "Sunday - Thursday: 9:00 AM - 6:00 PM"
+      },
+      "map": {
+        "title": "Interactive Map",
+        "description": "Find us on the map"
+      },
+      "needHelp": {
+        "title": "Need Help?",
+        "description": "We're here to assist you with any questions or concerns you may have."
+      },
+      "stillNeedHelp": {
+        "title": "Still Need Help?",
+        "description": "Can't find what you're looking for? Our support team is here to help you"
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "subtitle": "How we collect, use, and protect your information",
+      "lastUpdated": "Last updated",
+      "highlights": {
+        "dataProtection": {
+          "title": "Data Protection",
+          "description": "We implement industry-standard security measures to protect your information"
+        },
+        "privacyFirst": {
+          "title": "Privacy First",
+          "description": "Your privacy is our priority and we never sell your personal data"
+        },
+        "transparency": {
+          "title": "Transparency",
+          "description": "We're transparent about what data we collect and how we use it"
+        }
+      },
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "This Privacy Policy describes how we collect, use, and protect your personal information when you use our services."
+        },
+        "collection": {
+          "title": "Information We Collect",
+          "content": "We collect information you provide directly to us, information we collect automatically when you use our services, and information from third parties."
+        },
+        "usage": {
+          "title": "How We Use Your Information",
+          "content": "We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you."
+        },
+        "sharing": {
+          "title": "Information Sharing",
+          "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy."
+        },
+        "security": {
+          "title": "Data Security",
+          "content": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "rights": {
+          "title": "Your Rights",
+          "content": "You have the right to access, update, or delete your personal information. Contact us if you wish to exercise these rights."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have any questions about this Privacy Policy, please contact us using the information provided on our Contact page."
+        }
+      }
+    },
+    "terms": {
+      "title": "Terms & Conditions",
+      "subtitle": "Terms of service and conditions of use",
+      "lastUpdated": "Last updated",
+      "keyPoints": {
+        "legalAgreement": {
+          "title": "Legal Agreement",
+          "description": "These terms constitute a legally binding agreement between you and us"
+        },
+        "userProtection": {
+          "title": "User Protection",
+          "description": "We're committed to providing a safe and secure platform for all users"
+        },
+        "clearGuidelines": {
+          "title": "Clear Guidelines",
+          "description": "Our terms provide clear guidelines on acceptable use of our services"
+        }
+      },
+      "sections": {
+        "acceptance": {
+          "title": "Acceptance of Terms",
+          "content": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."
+        },
+        "services": {
+          "title": "Use of Services",
+          "content": "You may use our services only for lawful purposes and in accordance with these Terms of Service."
+        },
+        "account": {
+          "title": "User Accounts",
+          "content": "When you create an account, you are responsible for maintaining the security of your account and all activities that occur under your account."
+        },
+        "prohibited": {
+          "title": "Prohibited Uses",
+          "content": "You may not use our services for any illegal or unauthorized purpose or to violate any applicable laws in your jurisdiction."
+        },
+        "intellectual": {
+          "title": "Intellectual Property",
+          "content": "The content, organization, graphics, design, compilation, and other matters related to this site are protected under applicable copyrights and other proprietary laws."
+        },
+        "limitation": {
+          "title": "Limitation of Liability",
+          "content": "In no event shall our company be liable for any direct, indirect, punitive, incidental, special, or consequential damages."
+        },
+        "modifications": {
+          "title": "Modifications",
+          "content": "We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting on the website."
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions",
+      "searchPlaceholder": "Search FAQ...",
+      "categories": {
+        "general": "General",
+        "orders": "Orders & Shipping",
+        "payments": "Payments & Billing",
+        "returns": "Returns & Refunds",
+        "technical": "Technical Support"
+      },
+      "questions": {
+        "general": [
+          {
+            "question": "How do I create an account?",
+            "answer": "You can create an account by clicking the 'Register' button in the top navigation and filling out the required information."
+          },
+          {
+            "question": "How do I reset my password?",
+            "answer": "Click on 'Forgot Password' on the login page and follow the instructions sent to your email address."
+          },
+          {
+            "question": "Can I change my email address?",
+            "answer": "Yes, you can update your email address in your account settings under the Profile tab."
+          }
+        ],
+        "orders": [
+          {
+            "question": "How can I track my order?",
+            "answer": "You can track your order by logging into your account and visiting the 'My Orders' section, or using the tracking number sent to your email."
+          },
+          {
+            "question": "What are your shipping options?",
+            "answer": "We offer standard shipping (3-5 business days) and express shipping (1-2 business days). Shipping costs are calculated at checkout."
+          },
+          {
+            "question": "Can I change my shipping address?",
+            "answer": "You can change your shipping address before your order is processed. Contact our support team immediately if you need to make changes."
+          }
+        ],
+        "payments": [
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and other secure payment methods."
+          },
+          {
+            "question": "Is my payment information secure?",
+            "answer": "Yes, we use industry-standard SSL encryption to protect your payment information during transmission."
+          },
+          {
+            "question": "When will I be charged?",
+            "answer": "Your payment method will be charged immediately when you place your order."
+          }
+        ],
+        "returns": [
+          {
+            "question": "What is your return policy?",
+            "answer": "We offer a 30-day return policy for most items in their original condition with tags and packaging."
+          },
+          {
+            "question": "How do I initiate a return?",
+            "answer": "Contact our customer service team or visit the Returns section in your account to start the return process."
+          },
+          {
+            "question": "How long does it take to process a refund?",
+            "answer": "Refunds are typically processed within 3-5 business days after we receive your returned item."
+          }
+        ],
+        "technical": [
+          {
+            "question": "The website is loading slowly. What should I do?",
+            "answer": "Try clearing your browser cache and cookies, or try accessing the site from a different browser or device."
+          },
+          {
+            "question": "I'm having trouble placing an order. What should I do?",
+            "answer": "Make sure all required fields are filled correctly and your payment method is valid. If issues persist, contact our support team."
+          },
+          {
+            "question": "How do I enable cookies?",
+            "answer": "Cookie settings can be found in your browser's privacy or security settings. Most browsers allow cookies by default."
+          }
+        ]
+      }
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle theme",
+    "goToTop": "Go to top",
+    "previousPage": "Previous page",
+    "nextPage": "Next page",
+    "sortOptions": "Sort options",
+    "filterOptions": "Filter options",
+    "searchResults": "Search results",
+    "productImage": "Product image",
+    "userAvatar": "User avatar"
+  }
+}
