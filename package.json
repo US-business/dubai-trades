@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "Modern e-commerce platform with admin dashboard - Next.js 15, TypeScript, Arabic/English support",
-  "author": "Your Name",
+  "author": "us-business",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/US-business/dubai-trades.v2.git"
+    "url": "https://github.com/US-business/dubai-trades.git"
   },
   "keywords": [
     "nextjs",
