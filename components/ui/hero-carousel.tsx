@@ -13,7 +13,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
     title = "Quality for Every Home",
     subtitle = "Explore our curated collection of clothing, kitchen tools, home décor, electrical appliances, and more. Find everything you need to elevate your lifestyle.",
     images = [
-        "https://res.cloudinary.com/dvpp7fsht/image/upload/v1761217024/Adobe_Exprevvss_-_file_linqul.png",
+        "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767898095/gallery/wuy4qzbqvuunj6nfl0lv.png",
         "https://lh3.googleusercontent.com/aida-public/AB6AXuD7PxKeqs0ri3v4xWiegIlIPvJIHGQ4UMTkWosZQQQTrQNZ9pj96fbyANFay1Gj0tlfDzA4WzOxbhq6RtgV6iAw4o_ncoHjfqZUwEFT879jPMBbLl11OFuQXUxbgeDn9mjuIpofhA68ko3BwWyQqIpdCKchJl24hED-n32EHG5EBocfrKbka1scFaTCVGUrVtWClw0FtOFwKQUHPTVSvGDA1F3en44cu9SaKTOMJS8MMMSPnQ1kL8ucUKIhnqaCNwxp4Zk5ImIxIqIg",
         "https://lh3.googleusercontent.com/aida-public/AB6AXuD7PxKeqs0ri3v4xWiegIlIPvJIHGQ4UMTkWosZQQQTrQNZ9pj96fbyANFay1Gj0tlfDzA4WzOxbhq6RtgV6iAw4o_ncoHjfqZUwEFT879jPMBbLl11OFuQXUxbgeDn9mjuIpofhA68ko3BwWyQqIpdCKchJl24hED-n32EHG5EBocfrKbka1scFaTCVGUrVtWClw0FtOFwKQUHPTVSvGDA1F3en44cu9SaKTOMJS8MMMSPnQ1kL8ucUKIhnqaCNwxp4Zk5ImIxIqIg"
     ],
