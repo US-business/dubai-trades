@@ -568,21 +568,91 @@ export async function deleteProduct(id: number): Promise<ProductResponse> {
 
 export async function getProductsByCategorySlug(
   slug: string,
-  page = 1,
-  limit = 12
+  options: {
+    page?: number;
+    limit?: number;
+    brands?: string[];
+    priceMin?: number;
+    priceMax?: number;
+    inStock?: boolean;
+    onSale?: boolean;
+    sortBy?: "newest" | "oldest" | "priceLowHigh" | "priceHighLow";
+  } = {}
 ): Promise<ProductsResponse> {
   try {
+    // تعيين القيم الافتراضية
+    const {
+      page = 1,
+      limit = 12,
+      brands = [],
+      priceMin,
+      priceMax,
+      inStock,
+      onSale,
+      sortBy = "newest"
+    } = options;
+
     const dbAvailable = await isDatabaseAvailable();
     if (!dbAvailable) {
-      // لو مفيش DB نرجع من الموك سيرفيس
       return await mockProductsService.getProducts(page, limit, undefined, undefined);
     }
 
     const { db } = await import("@/lib/db");
     const { products, categories } = await import("@/lib/db/schema");
-    const { eq, desc, count } = await import("drizzle-orm");
+    const { eq, desc, asc, count, and, or, gte, lte, inArray } = await import("drizzle-orm");
 
     const offset = (page - 1) * limit;
+
+    // بناء شروط الفلترة
+    const whereConditions: any[] = [
+      eq(categories.slug, slug) // شرط الفئة أساسي
+    ];
+
+    // فلتر البراندات
+    if (brands.length > 0) {
+      whereConditions.push(or(...brands.map(brand => eq(products.brand, brand))));
+    }
+
+    // فلتر السعر
+    if (priceMin !== undefined) {
+      whereConditions.push(gte(products.price, priceMin.toString()));
+    }
+    if (priceMax !== undefined) {
+      whereConditions.push(lte(products.price, priceMax.toString()));
+    }
+
+    // فلتر المخزون
+    if (inStock === true) {
+      whereConditions.push(gte(products.quantityInStock, 1));
+    }
+
+    // فلتر التخفيضات
+    if (onSale === true) {
+      whereConditions.push(
+        or(
+          eq(products.discountType, "fixed"),
+          eq(products.discountType, "percentage")
+        )
+      );
+    }
+
+    // تحديد الترتيب
+    let orderByClause;
+    switch (sortBy) {
+      case "oldest":
+        orderByClause = asc(products.createdAt);
+        break;
+      case "priceLowHigh":
+        orderByClause = asc(products.price);
+        break;
+      case "priceHighLow":
+        orderByClause = desc(products.price);
+        break;
+      case "newest":
+      default:
+        orderByClause = desc(products.createdAt);
+        break;
+    }
 
     // الكويري الرئيسية
     const query = db
@@ -612,19 +682,19 @@ export async function getProductsByCategorySlug(
       })
       .from(products)
       .leftJoin(categories, eq(products.categoryId, categories.id))
-      .where(eq(categories.slug, slug))
-      .orderBy(desc(products.createdAt))
+      .where(and(...whereConditions))
+      .orderBy(orderByClause)
       .limit(limit)
       .offset(offset);
 
     const result = await query;
 
-    // الإجمالي (لل pagination)
-    let totalQuery = db
+    // الإجمالي (مع الفلترة)
+    const totalQuery = db
       .select({ count: count() })
       .from(products)
       .leftJoin(categories, eq(products.categoryId, categories.id))
-      .where(eq(categories.slug, slug)) as any;
+      .where(and(...whereConditions));
 
     const totalResult = await totalQuery;
     const total = totalResult[0].count;
@@ -903,7 +973,7 @@ export async function getDiscountedProductsActions(
         .select({ count: count() })
         .from(products)
         .where(discountCondition)
-      
+
       const total = totalResult[0].count
 
       return {

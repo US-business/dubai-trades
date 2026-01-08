@@ -37,14 +37,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 interface ProductsPageProps {
    searchParams: Promise<{
-      page?: string;
-      limit?: string;
       search?: string;
       category?: string;
-      brand?: string;
-      minPrice?: string;
-      maxPrice?: string;
-      sort?: string;
    }>;
 }
 
@@ -55,14 +49,12 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
    const dir = locale === "ar" ? "rtl" : "ltr";
 
    // Parse search parameters
-   const page = parseInt(resolvedSearchParams.page || '1');
-   const limit = parseInt(resolvedSearchParams.limit || '20');
    const search = resolvedSearchParams.search;
    const categoryId = resolvedSearchParams.category ? parseInt(resolvedSearchParams.category) : undefined;
 
-   // Fetch data
+   // Fetch ALL data (no pagination - client-side will handle it)
    const [productsRes, categoriesRes] = await Promise.all([
-      getAllProductsActions(page, limit, search, false, categoryId),
+      getAllProductsActions(1, 10000, search, false, categoryId), // Fetch all products
       getCategories(),
    ]);
 
@@ -152,12 +144,9 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                      {products.length > 0 ? (
                         <FilteredProducts
                            initialProducts={products}
-                           totalProducts={totalProducts}
-                           currentPage={page}
-                           limit={limit}
                            dir={dir}
+                           lang={locale}
                            showSorting={true}
-                           showViewToggle={true}
                            showPagination={true}
                         />
                      ) : (

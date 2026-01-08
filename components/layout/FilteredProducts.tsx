@@ -1,10 +1,34 @@
 'use client';
 
+/**
+ * FilteredProducts Component
+ * 
+ * PURPOSE:
+ * This component is designed for CLIENT-SIDE filtering and pagination.
+ * It receives ALL products from the server and handles filtering, sorting, and pagination in the browser.
+ * 
+ * USAGE:
+ * - Use this component when you want instant filter/sort updates without page reloads
+ * - Suitable for search pages or pages where you fetch all products at once
+ * - NOT recommended for large datasets (>500 products) due to performance
+ * 
+ * NOTE FOR CATEGORY PAGES:
+ * The category page now uses a different approach with server-side filtering.
+ * See: app/[lang]/(site)/category/[slug]/_components/ for the new implementation.
+ * 
+ * ALTERNATIVE:
+ * For server-side filtering (recommended for category pages):
+ * - Use CategoryProducts component
+ * - Pass pre-filtered products from the server
+ * - Filters update via URL parameters and trigger server requests
+ */
+
 import { useSearchStore } from '@/lib/stores/search-store';
 import { useEffect } from 'react';
 import ProductCard from '@/components/shared/ProductCard/ProductCard';
 import ReusablePagination from '../shared/ReusablePagination';
 import { useI18nStore } from '@/lib/stores';
+import { useRouter } from 'next/navigation';
 
 interface FilteredProductsProps {
    initialProducts: any[];
@@ -17,6 +41,7 @@ interface FilteredProductsProps {
    showSorting?: boolean;
    showViewToggle?: boolean;
    showPagination?: boolean;
+   useServerPagination?: boolean; // If true, products are already paginated by server
 }
 
 export const FilteredProducts = ({
@@ -29,8 +54,10 @@ export const FilteredProducts = ({
    lang = 'en',
    showSorting = true,
    showViewToggle = true,
-   showPagination = true
+   showPagination = true,
+   useServerPagination = false
 }: FilteredProductsProps) => {
+   const router = useRouter();
    const searchStore = useSearchStore(state => state)
    const { dir: storeDir } = useI18nStore()
    const dir = propDir || storeDir
@@ -75,13 +102,19 @@ export const FilteredProducts = ({
             return false;
          }
       }
-
       if (onSaleOnly) {
-         // For on-sale filter, check if there's an active discount
-         if (!product.discountValue && product.discountValue <= 0 && product.discountType === 'none' || product.status === 'on_sale') {
-            return false;
-         }
+         const hasDiscount =
+            product.discountType !== 'none' &&
+            product.discountValue > 0;
+
+         if (!hasDiscount) return false;
       }
+      // if (onSaleOnly) {
+      //    // For on-sale filter, check if there's an active discount
+      //    if (!product.discountValue && product.discountValue <= 0 && product.discountType === 'none' || product.status === 'on_sale') {
+      //       return false;
+      //    }
+      // }
       // If all filters pass, return true
 
       return true;
@@ -110,11 +143,14 @@ export const FilteredProducts = ({
    }, [filteredProducts.length, setTotal]);
 
    // Paginate products
-   const ITEMS_PER_PAGE = 12;
-   const paginatedProducts = sortedProducts.slice(
-      (page - 1) * ITEMS_PER_PAGE,
-      page * ITEMS_PER_PAGE
-   );
+   const ITEMS_PER_PAGE = limit || 12;
+   // If server-side pagination, products are already paginated, skip slicing
+   const paginatedProducts = useServerPagination
+      ? sortedProducts
+      : sortedProducts.slice(
+         (page - 1) * ITEMS_PER_PAGE,
+         page * ITEMS_PER_PAGE
+      );
 
    return (
       <div className="flex-1 space-y-4 sm:space-y-6 min-w-0">
@@ -140,9 +176,9 @@ export const FilteredProducts = ({
                      {dir === 'rtl' ? 'ترتيب:' : 'Sort:'}
                   </span>
                   <select
-                  title={dir === 'rtl' ? 'ترتيب:' : 'Sort:'}
+                     title={dir === 'rtl' ? 'ترتيب:' : 'Sort:'}
                      value={sortBy}
-                     onChange={(e : any) => setSortBy(e?.target?.value)}
+                     onChange={(e: any) => setSortBy(e?.target?.value)}
                      className="text-xs sm:text-sm border rounded px-2 py-1.5 sm:py-1 flex-1 sm:flex-initial min-w-0"
                   >
                      <option value="newest">{dir === 'rtl' ? 'الأحدث' : 'Newest'}</option>
@@ -190,9 +226,20 @@ export const FilteredProducts = ({
          {showPagination && paginatedProducts.length > 0 && (
             <div className="flex justify-center">
                <ReusablePagination
-                  currentPage={page}
-                  totalPages={Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)}
-                  onPageChange={(newPage) => setPage(newPage)}
+                  currentPage={useServerPagination ? currentPage : page}
+                  totalPages={useServerPagination
+                     ? Math.ceil(totalProducts / ITEMS_PER_PAGE)
+                     : Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)
+                  }
+                  onPageChange={(newPage) => {
+                     if (useServerPagination && categorySlug) {
+                        // Server-side: navigate to new URL with page parameter
+                        router.push(`/category/${categorySlug}?page=${newPage}`);
+                     } else {
+                        // Client-side: update state
+                        setPage(newPage);
+                     }
+                  }}
                   nextLabel={dir === 'rtl' ? 'التالي' : 'Next'}
                   previousLabel={dir === 'rtl' ? 'السابق' : 'Previous'}
                />

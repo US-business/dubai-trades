@@ -1,16 +1,26 @@
 import { getProductsByCategorySlug } from "@/lib/actions/products";
 import { cookies } from "next/headers";
 import { Metadata } from "next";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/shadcnUI/breadcrumb"; 
-import { FilterSidebar } from "@/components/layout/FilterSidebar";
-import { FilteredProducts } from "@/components/layout/FilteredProducts";
-import { Home } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { cache } from "react";
+import CategoryHeader from "./_components/CategoryHeader";
+import CategoryProducts from "./_components/CategoryProducts";
+import CategoryFilterSidebar from "./_components/CategoryFilterSidebar";
 
 // Cached function to avoid duplicate data fetching
-const getCachedCategoryProducts = cache(async (slug: string) => {
-  return await getProductsByCategorySlug(slug);
+const getCachedCategoryProducts = cache(async (
+  slug: string,
+  options: {
+    page?: number;
+    limit?: number;
+    brands?: string[];
+    priceMin?: number;
+    priceMax?: number;
+    inStock?: boolean;
+    onSale?: boolean;
+    sortBy?: "newest" | "oldest" | "priceLowHigh" | "priceHighLow";
+  }
+) => {
+  return await getProductsByCategorySlug(slug, options);
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -22,10 +32,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const cookieStore = await cookies();
-  const locale = cookieStore.get("preferred-locale")?.value || "ar"; // default ar
+  const locale = cookieStore.get("preferred-locale")?.value || "ar";
   const dir = locale === "ar" ? "rtl" : "ltr";
 
-  const { data: productInCategory } = await getCachedCategoryProducts(categorySlug);
+  const { data: productInCategory } = await getCachedCategoryProducts(categorySlug, {});
 
   if (!productInCategory || productInCategory.length === 0) {
     return { title: 'Category Not Found | Dubai-Trades' };
@@ -40,66 +50,122 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-
-
-
-
-
-
-
-export default async function CategoryPage({ params }: { params: Promise<{ slug: string, lang: string }> }) {
+export default async function CategoryPage({
+  params,
+  searchParams
+}: {
+  params: Promise<{ slug: string, lang: string }>,
+  searchParams: Promise<{
+    page?: string;
+    brands?: string;
+    priceMin?: string;
+    priceMax?: string;
+    inStock?: string;
+    onSale?: string;
+    sortBy?: string;
+  }>
+}) {
   const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
   const categorySlug = resolvedParams.slug;
   const lang = resolvedParams.lang || 'ar';
 
   const cookieStore = await cookies();
-  const locale = cookieStore.get("preferred-locale")?.value || "ar"; // default ar
+  const locale = cookieStore.get("preferred-locale")?.value || "ar";
   const dir = locale === "ar" ? "rtl" : "ltr";
 
-  const productsRes = await getCachedCategoryProducts(categorySlug);
+  // Parse filter parameters from URL
+  const page = parseInt(resolvedSearchParams.page || '1');
+  const limit = 12;
+  const brands = resolvedSearchParams.brands?.split(',').filter(Boolean) || [];
+  const priceMin = resolvedSearchParams.priceMin ? parseFloat(resolvedSearchParams.priceMin) : undefined;
+  const priceMax = resolvedSearchParams.priceMax ? parseFloat(resolvedSearchParams.priceMax) : undefined;
+  const inStock = resolvedSearchParams.inStock === 'true';
+  const onSale = resolvedSearchParams.onSale === 'true';
+  const sortBy = (resolvedSearchParams.sortBy as "newest" | "oldest" | "priceLowHigh" | "priceHighLow") || "newest";
+
+  // Fetch products with filters
+  const productsRes = await getCachedCategoryProducts(categorySlug, {
+    page,
+    limit,
+    brands,
+    priceMin,
+    priceMax,
+    inStock,
+    onSale,
+    sortBy
+  });
 
   if (!productsRes.success || !productsRes.data?.length) {
     return (
-      <>
-        {dir === 'rtl' ?
-          <h1 className="text-center">المنتجات غير متاحة</h1>
-          :
-          <h1 className="text-center">Products Not Available</h1>
-        }
-      </>
-    ); 
+      <main className="container mx-auto py-8">
+        <div className="text-center">
+          {dir === 'rtl' ?
+            <h1 className="text-2xl font-bold text-gray-900">المنتجات غير متاحة</h1>
+            :
+            <h1 className="text-2xl font-bold text-gray-900">Products Not Available</h1>
+          }
+          <p className="mt-2 text-gray-600">
+            {dir === 'rtl' ? 'لم يتم العثور على منتجات في هذه الفئة' : 'No products found in this category'}
+          </p>
+        </div>
+      </main>
+    );
   }
- 
-  // Extract unique brands from products
-  const brands = [...new Set(productsRes.data.map((p: any) => p.brand).filter(Boolean))];
+
+  // Extract category info
+  const categoryInfo = {
+    en: productsRes.data[0].category?.nameEn || 'Category',
+    ar: productsRes.data[0].category?.nameAr || 'فئة'
+  };
+
+  // Extract unique brands from all products (for filter sidebar)
+  // Note: We need to get all brands, not just from current page
+  // For now, using brands from current results. Ideally, fetch all brands separately.
+  const allProductsRes = await getCachedCategoryProducts(categorySlug, { limit: 1000 });
+  const availableBrands = [...new Set(
+    (allProductsRes.data || [])
+      .map((p: any) => p.brand)
+      .filter(Boolean)
+  )] as string[];
+
+  // Current filters state
+  const currentFilters = {
+    brands,
+    priceRange: [priceMin || 0, priceMax || 100000] as [number, number],
+    inStock,
+    onSale
+  };
 
   return (
-    <main className="container mx-auto ">
-      {/* Breadcrumbs */}
-      <Breadcrumb className="my-9 mx-auto text-md bg-white rounded-lg py-2 px-4 shadow-sm">
-        <BreadcrumbList className="flex items-center justify-center" role="list">
-          <BreadcrumbItem>
-            <BreadcrumbLink href="/">{<Home className="h-4 w-4" />}</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator className={cn(`${dir === "rtl" ? "rotate-180" : ""}`)}/>
-          <BreadcrumbItem>
-            <BreadcrumbPage>{dir === "rtl" ? productsRes.data[0].category.nameAr : productsRes.data[0].category.nameEn || "Category"}</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
+    <main className="container mx-auto px-4 py-6">
+      {/* Category Header */}
+      <CategoryHeader
+        categoryName={categoryInfo}
+        dir={dir}
+        totalProducts={productsRes.total || 0}
+      />
 
-      <div className="flex flex-col lg:flex-row gap-4">
+      <div className="mt-8 flex flex-col lg:flex-row gap-6">
         {/* Filter Sidebar */}
-        <FilterSidebar brands={brands} dir={dir} />
+        <CategoryFilterSidebar
+          availableBrands={availableBrands}
+          currentFilters={currentFilters}
+          dir={dir}
+          maxPrice={100000}
+        />
 
-        {/* Filtered Products */}
-        <FilteredProducts
-          initialProducts={productsRes.data}
-          categorySlug={categorySlug}
+        {/* Products Grid */}
+        <CategoryProducts
+          products={productsRes.data}
+          total={productsRes.total || 0}
+          currentPage={page}
+          limit={limit}
+          currentSort={sortBy}
           lang={lang}
           dir={dir}
         />
       </div>
-    </main> 
+    </main>
   );
 }
