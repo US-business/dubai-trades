@@ -219,6 +219,11 @@ export default async function HomePage({
           <Banner
             dir={dir}
             position={dir === "rtl" ? "left" : "right"}
+            image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1768255882/gallery/fwdbk9dm4ckvttufqo5n.png"
+            titleEn="Explore our premium kitchen tools"
+            titleAr="استكشف أدوات المطبخ المميزة لدينا"
+            descriptionEn="Discover our exclusive collection"
+            descriptionAr="اكتشف مجموعتنا الحصرية من المنتجات"
             href={categories.find(c => c.slug === "kitchen") ? `/${lang}/category/kitchen` : `/${lang}/products`}
             lang={lang}
             color="green"
