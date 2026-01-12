@@ -5,6 +5,8 @@ import { cache } from "react";
 import CategoryHeader from "./_components/CategoryHeader";
 import CategoryProducts from "./_components/CategoryProducts";
 import CategoryFilterSidebar from "./_components/CategoryFilterSidebar";
+import { Home } from "lucide-react";
+import Link from "next/link";
 
 // Cached function to avoid duplicate data fetching
 const getCachedCategoryProducts = cache(async (
@@ -101,9 +103,19 @@ export default async function CategoryPage({
       <main className="container mx-auto py-8">
         <div className="text-center">
           {dir === 'rtl' ?
-            <h1 className="text-2xl font-bold text-gray-900">المنتجات غير متاحة</h1>
+            <div className="h-[50dvh] flex flex-col justify-center items-center">
+              <h1 className="text-2xl font-bold text-gray-900">المنتجات غير متاحة</h1>
+              <Link href={`/${lang}`}>
+                <Home className="mx-auto mt-4 text-gray-400" size={48} />
+              </Link>
+            </div>
             :
-            <h1 className="text-2xl font-bold text-gray-900">Products Not Available</h1>
+            <div className="h-[50dvh] flex flex-col justify-center items-center">
+              <h1 className="text-2xl font-bold text-gray-900">Products Not Available</h1>
+              <Link href={`/${lang}`}>
+                <Home className="mx-auto mt-4 text-gray-400" size={48} />
+              </Link>
+            </div>
           }
           <p className="mt-2 text-gray-600">
             {dir === 'rtl' ? 'لم يتم العثور على منتجات في هذه الفئة' : 'No products found in this category'}

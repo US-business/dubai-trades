@@ -22,7 +22,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
             className="group"
         >
             <div className={cn(
-                'relative bg-slate-300 p-1.5 sm:p-2',
+                'relative bg-slate-300 p-1.5 sm:p-2 h-full',
                 'rounded-md sm:rounded-lg border border-gray-100 dark:border-gray-700',
                 'shadow-sm hover:shadow-xl sm:shadow-md sm:hover:shadow-2xl',
                 'transition-all duration-300 ease-out',

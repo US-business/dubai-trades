@@ -14,7 +14,7 @@ const CategoryImage: React.FC<CategoryImageProps> = ({
     return (
         <div
             className={cn(
-                "relative aspect-square w-full ",
+                "relative m-auto aspect-square w-full",  
                 "bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800"
             )}
             style={{ borderRadius }}
@@ -31,7 +31,7 @@ const CategoryImage: React.FC<CategoryImageProps> = ({
                             'transition-transform duration-500 ease-out',
                             'group-hover:scale-110'
                         )}
-                        quality={85}
+                        quality={65}
                         style={{ borderRadius }}
                     />
                     {/* Overlay Gradient */}

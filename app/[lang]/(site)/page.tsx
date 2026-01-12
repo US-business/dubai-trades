@@ -86,6 +86,17 @@ export default async function HomePage({
   );
   const categoryProductsData = await Promise.all(categoryProductsPromises);
 
+// const arr = [1, 2, 3, 4, 5];
+
+// const order = {
+//   5: 1,
+//   3: 2,
+//   1: 3
+// } as any;
+//   const sorted = arr.sort((a , b) => {
+//   return (order[a] ?? Infinity) - (order[b] ?? Infinity);
+// });
+
   return (
     <>
       {/* Background Decorations - Hidden on mobile for better performance */}
@@ -123,7 +134,7 @@ export default async function HomePage({
 
         {/* <CategoriesList categories={categories} dictionary={dictionary} dir={dir} lang={lang} className={cn("relative min-w-[15%]")} /> */}
         <div className="relative flex flex-col lg:flex-row justify-between gap-3 sm:gap-4 md:gap-6 items-stretch w-full px-2 sm:px-4 md:px-6">
-          <div className="w-full lg:w-auto lg:min-w-[280px] xl:min-w-[320px] flex-shrink-0">
+          <div className="w-full lg:w-[280px] xl:w-[450px] flex-shrink-0">
             <CategoriesGrid
               categories={categories}
               dictionary={dictionary}
@@ -131,9 +142,9 @@ export default async function HomePage({
               lang={lang}
               maxCategories={4}
               columns={2}
-              className="relative h-full"
+              className="relative "
             />
-          </div>
+          </div> 
           <CarouselMain items={featuredProducts} dir={dir} lang={lang} />
         </div>
 
@@ -151,7 +162,7 @@ export default async function HomePage({
           <ProductsBanner dir={dir} position={dir === "rtl" ? "left" : "right"} />
         </div> */}
 
-   
+
 
         {/* Discounted Products Section */}
         {discountedProducts.length > 0 && (
@@ -183,8 +194,10 @@ export default async function HomePage({
 
         {/* Category Products Section - Fixed N+1 Problem */}
         <div className="my-12 space-y-8">
+
           {categories.map((category, index) => {
-            const products = categoryProductsData[index]?.data || [];
+            // const products = categoryProductsData[index]?.data || [];
+            const products = categoryProductsData[category.id]?.data || [];
 
             // Skip if no products in this category
             if (products.length === 0) return null;
@@ -217,7 +230,7 @@ export default async function HomePage({
           <Banner
             dir={dir}
             position={dir === "rtl" ? "left" : "right"}
-            image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1762006455/Elegant_Handbag_Display__1_-removebg-preview_tlhmft.png"
+            image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1768254343/gallery/vusovxm8urdzmcpr7iuu.png"
             titleEn="Shop now for elegant handbags"
             titleAr="تسوق الآن للحقائب الأنيقة"
             descriptionEn="Discover our exclusive collection"
@@ -232,9 +245,9 @@ export default async function HomePage({
             position={dir === "rtl" ? "left" : "right"}
             image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1762006654/melina-bronca-20Z2O0tS-hs-unsplash-removebg-preview_krrxux.png"
             titleEn="Discover trendy fashion styles"
-            titleAr="اكتشف أحدث صيحات الموضة"
+            titleAr="اكتشف أحدث  ادوات التحضير والتقديم"
             descriptionEn="Explore our fashion collection"
-            descriptionAr="استكشف مجموعتنا من الأزياء"
+            descriptionAr="استكشف مجموعتنا من الادوات المنزلية"
             href={categories.find(c => c.slug === "clothing") ? `/${lang}/category/clothing` : `/${lang}/products`}
             lang={lang}
             color="green"
@@ -250,7 +263,7 @@ export default async function HomePage({
             titleAr="اصنع منزل أحلامك بالأثاث العصرى"
             descriptionEn="Discover our exclusive collection"
             descriptionAr="اكتشف مجموعتنا الحصرية من المنتجات"
-            image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1762006703/nina-kost-aXuUDuvnBPk-unsplash-removebg-preview_xfmlai.png"
+            image="https://res.cloudinary.com/dvpp7fsht/image/upload/v1768255565/gallery/kfe385qn5emiijzf6qjk.png"
             href={categories.find(c => c.slug === "kitchen") ? `/${lang}/category/kitchen` : `/${lang}/products`}
             lang={lang}
           />

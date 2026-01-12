@@ -75,9 +75,9 @@ const CarouselRounded = ({ items, dir, lang, className }: SliderRoundedProps) =>
                                     </div> 
                                  </div>
                                     <div className="relative text-center flex items-center justify-center">
-                                       <Badge className={cn("text-[1rem] font-medium text-center text-amber-900 relative bg-amber-100 group-hover:bg-amber-200 transition-colors")}>
+                                       <h5 className={cn("text-[1rem] w-full font-medium text-center text-amber-900 relative  transition-colors")}>
                                           {categoryName}
-                                       </Badge>
+                                       </h5>
                                     </div>
                                  </CardContent>
                               </Card>

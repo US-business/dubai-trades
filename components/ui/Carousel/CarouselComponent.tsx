@@ -26,7 +26,6 @@ const CarouselComponent = ({ dir = 'ltr', lang = 'en', items, className }: Categ
   if (!items || items.length === 0) {
     return null
   }
-
   // إنشاء كروت وهمية إذا كان عدد المنتجات أقل من 6
   const minItems = 6;
   const displayItems = [...items];
@@ -64,7 +63,7 @@ const CarouselComponent = ({ dir = 'ltr', lang = 'en', items, className }: Categ
       >
         <CarouselContent >
           {displayItems?.map((item: any) => (
-            <CarouselItem key={item.id} className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5 p-3">
+            <CarouselItem key={item.id} className="basis-1/2 sm:basis-1/2 md:basis-1/3 lg:basis-1/5 xl:basis-1/6 p-3">
               {item.isPlaceholder ? (
                 <PlaceholderCard />
               ) : (

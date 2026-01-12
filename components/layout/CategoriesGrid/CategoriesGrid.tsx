@@ -57,10 +57,10 @@ const CategoriesGrid: React.FC<CategoriesGridProps> = ({
                                 hasImage={hasImage}
                                 lang={lang}
                                 dir={dir}
-                                index={i}
+                                index={category.id}
                             />
                         )
-                    }).reverse()}
+                    })}
                 </div>
 
                 {/* View All Link - Optional */}
