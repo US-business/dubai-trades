@@ -155,7 +155,7 @@ const CarouselMain = ({
                                 </Card>
                             </CarouselItem>
                         );
-                    })}
+                    }).reverse()}
                 </CarouselContent>
 
                 {/* Enhanced Navigation Buttons */}

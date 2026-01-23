@@ -38,6 +38,8 @@ const CarouselComponent = ({ dir = 'ltr', lang = 'en', items, className }: Categ
         isPlaceholder: true,
       });
     }
+    // console.log('displayItems' ,displayItems);
+    
   }
   return (
     <Card className={className ? className : `mt-6 overflow-visible relative bg-transparent gap-2 border-0 ${className}`}>

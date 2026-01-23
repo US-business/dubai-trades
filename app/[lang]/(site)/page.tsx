@@ -77,14 +77,18 @@ export default async function HomePage({
 
   const products = productsRes.data || [];
   const categories = categoriesRes.data;
+
+  console.log('categories', categories);
+  
   const featuredProducts = featuredProductsRes.data || [];
   const discountedProducts = discountedProductsRes.data || [];
-
+  
   // ✅ Fix N+1 Problem: Fetch all category products in parallel
   const categoryProductsPromises = categories.map((category) =>
     getAllProductsActions(1, 10, undefined, false, category.id)
-  );
-  const categoryProductsData = await Promise.all(categoryProductsPromises);
+);
+const categoryProductsData = await Promise.all(categoryProductsPromises);
+console.log('categoryProductsData', categoryProductsData);
 
 // const arr = [1, 2, 3, 4, 5];
 
@@ -196,22 +200,25 @@ export default async function HomePage({
         <div className="my-12 space-y-8">
 
           {categories.map((category, index) => {
-            // const products = categoryProductsData[index]?.data || [];
-            const products = categoryProductsData[category.id]?.data || [];
 
+            const products = categoryProductsData[index]?.data || [];
+            // const products = categoryProductsData[category.id]?.data || [];
+            // console.log('all products' , products);
+            
             // Skip if no products in this category
             if (products.length === 0) return null;
 
             return (
-              <div key={category.id} className="space-y-4">
+              // <div key={category.id} className="space-y-4">
                 <CarouselCategoryProducts
+                  key={category.id}
                   products={products}
                   dir={dir}
                   lang={lang}
                 />
-              </div>
+              // </div>
             );
-          })}
+          }).reverse()}
         </div>
 
         <div className="my-12 px-2 sm:px-4 md:px-6 space-y-6">
