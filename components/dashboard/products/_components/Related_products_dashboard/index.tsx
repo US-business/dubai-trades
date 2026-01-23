@@ -26,24 +26,27 @@ function RelatedProducts({ product, isEdit = false }: RelatedProductsProps) {
 
 
    const { t, dir } = useI18nStore()
-   const [relatedProductsSearch, setRelatedProductsSearch ] = useState("");
-   const { productState, updateProductField, updateProductImages, removeProductImage, resetProductForm, setProductForm,setShowSaveButtonProduct } = useAppStore();
+   const [relatedProductsSearch, setRelatedProductsSearch] = useState("");
+   const { productState, updateProductField, updateProductImages, removeProductImage, resetProductForm, setProductForm, setShowSaveButtonProduct } = useAppStore();
 
    const {
       availableProducts, selectedRelatedProducts, filteredProducts, relatedProducts
    } = productState;
 
 
-   useEffect( () => {
+   useEffect(() => {
       setShowSaveButtonProduct(true);
-   } , [])
+   }, [])
 
    const loadData = useCallback(async () => {
       if (isEdit && product?.id) {
          try {
             // First load the product data
             // Then load available products
-            const result = await getAllProductsActions();
+            const result = await getAllProductsActions(1,        // page
+               9999,     // limit (حمل الكل)
+               undefined,
+               false);
             if (result?.success && result?.data) {
                const filteredProductsDB = result.data.filter((p: any) => p.id !== product.id);
                updateProductField("availableProducts", filteredProductsDB);
@@ -72,7 +75,7 @@ function RelatedProducts({ product, isEdit = false }: RelatedProductsProps) {
    useEffect(() => {
       // for related Products
       loadData();
-   }, []);
+   }, [isEdit, product?.id, loadData]);
 
    // useEffect(() => {
    //    const init = async () => {
