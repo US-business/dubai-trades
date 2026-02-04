@@ -62,7 +62,7 @@ export function ProductInfo({ product, priceInfo, dir = 'ltr' }: ProductInfoProp
                         <Badge className="bg-transparent text-green-600 hover:bg-transparent border border-green-300 flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5">
                             <Package className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             <span className="text-xs sm:text-sm font-semibold">
-                                {dir === 'rtl' ? 'متوفر' : 'In Stock'} ({product.quantityInStock})
+                                {dir === 'rtl' ? 'متوفر' : 'In Stock'}
                             </span>
                         </Badge>
                     ) : (
