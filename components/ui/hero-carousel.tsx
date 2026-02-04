@@ -1,69 +1,65 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import Image from 'next/image';
 
 interface HeroCarouselProps {
-    title?: string;
-    subtitle?: string;
-    images?: string[];
-    className?: string;
+  title?: string;
+  subtitle?: string;
+  images?: string[];
+  className?: string;
 }
 
 export const HeroCarousel: React.FC<HeroCarouselProps> = ({
-    title = "Quality for Every Home",
-    subtitle = "Explore our curated collection of clothing, kitchen tools, home décor, electrical appliances, and more. Find everything you need to elevate your lifestyle.",
-    images = [
-        "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767898095/gallery/wuy4qzbqvuunj6nfl0lv.png",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuD7PxKeqs0ri3v4xWiegIlIPvJIHGQ4UMTkWosZQQQTrQNZ9pj96fbyANFay1Gj0tlfDzA4WzOxbhq6RtgV6iAw4o_ncoHjfqZUwEFT879jPMBbLl11OFuQXUxbgeDn9mjuIpofhA68ko3BwWyQqIpdCKchJl24hED-n32EHG5EBocfrKbka1scFaTCVGUrVtWClw0FtOFwKQUHPTVSvGDA1F3en44cu9SaKTOMJS8MMMSPnQ1kL8ucUKIhnqaCNwxp4Zk5ImIxIqIg",
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuD7PxKeqs0ri3v4xWiegIlIPvJIHGQ4UMTkWosZQQQTrQNZ9pj96fbyANFay1Gj0tlfDzA4WzOxbhq6RtgV6iAw4o_ncoHjfqZUwEFT879jPMBbLl11OFuQXUxbgeDn9mjuIpofhA68ko3BwWyQqIpdCKchJl24hED-n32EHG5EBocfrKbka1scFaTCVGUrVtWClw0FtOFwKQUHPTVSvGDA1F3en44cu9SaKTOMJS8MMMSPnQ1kL8ucUKIhnqaCNwxp4Zk5ImIxIqIg"
-    ],
-    className = ""
+  images = [
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767898095/gallery/wuy4qzbqvuunj6nfl0lv.png",
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767817232/gallery/f5gc2vptgl8t0yr9u0qq.jpg",
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1770235974/gallery/u5qp21xoy7vzobbbukhq.jpg"
+  ],
+  className = ""
 }) => {
-    return (
-        <div className={`absolute top-0 left-0 h-dvh w-full overflow-hidden ${className}`}>
-            {/* Animated Background Carousel */}
-            <div className="absolute inset-0 w-full h-full flex animate-slide z-0">
-                {images.map((image, index) => (
-                    <div
-                        key={index}
-                        className="w-full h-full flex-shrink-0 bg-cover bg-center"
-                        style={{
-                            // backgroundImage: `url("${image}")` 
-                            backgroundImage: `linear-gradient(rgba(0, 31, 63, 0.2) 0%, rgba(0, 31, 63, 0.3) 100%), url("${image}")`
-                        }}
-                    />
-                ))}
-            </div>
-            <div className="absolute inset-0 w-full h-full flex bg-[linear-gradient(180deg,transparent,transparent_5%,transparent_25%,white,#f1f5f8)]  z-0"></div>
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-            {/* <style jsx>{`
-        @keyframes slide {
-          0%, 100% {
-            transform: translateX(0%);
-          }
-          25% {
-            transform: translateX(0%);
-          }
-          33% {
-            transform: translateX(-100%);
-          }
-          58% {
-            transform: translateX(-100%);
-          }
-          66% {
-            transform: translateX(-200%);
-          }
-          91% {
-            transform: translateX(-200%);
-          }
-        }
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
-        .animate-slide {
-          animation: slide 15s infinite ease-in-out;
-        }
-      `}</style> */}
-        </div>
-    );
+  return (
+    <div className={`absolute top-0 left-0 h-dvh w-full overflow-hidden ${className}`}>
+      {images.map((image, index) => (
+        // <Image
+        //   key={index}
+        //   src={image}
+        //   alt={`Slide ${index + 1}`}
+        //   fill
+        //   className={`object-cover transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+        //     }`}
+        //   style={{
+        //     filter: 'brightness(0.8)'
+        //   }}
+        // />   
+        
+        <div
+          key={index}
+          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 31, 63, 0.2) 0%, rgba(0, 31, 63, 0.3) 100%), url("${image}")`,
+            // backgroundImage: `url("${image}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+      ))}
+
+      <div className="absolute inset-0 w-full h-full flex bg-[linear-gradient(180deg,transparent,transparent_5%,transparent_25%,white,#f1f5f8)]  z-0"></div>
+    </div>
+  );
 };
 
 export default HeroCarousel;

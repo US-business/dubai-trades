@@ -19,7 +19,7 @@ export const HeroTitle: React.FC<HeroTitleProps> = ({
                 <div className="flex flex-col gap-6 text-center ">
                     {/* Main Title */}
                     {/* <h1 className="text-white drop-shadow-2xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight animate-in fade-in duration-700"> */}
-                    <h1 className={cn("drop-shadow-2xl text-3xl sm:text-4xl md:text-5xl lg:text-6xl",
+                    <h1 className={cn("drop-shadow-2xl text-lg sm:text-xl md:text-2xl lg:text-3xl",
                         "rounded-lg",
                         "font-black bg-gradient-to-r from-blue-800 to-amber-800 bg-clip-text text-transparent",
                         "bg-background/80 backdrop-blur-md",

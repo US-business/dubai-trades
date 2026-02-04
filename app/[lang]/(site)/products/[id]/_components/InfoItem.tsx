@@ -106,7 +106,7 @@ const InfoItem = ({ product, dir, lang = 'ar', reviews }: InfoItemProps) => {
                      </Badge>
                   )}
                </div>
-               
+
                <div className="flex gap-2 self-start sm:self-auto">
                   <WishlistButton
                      productId={Number(product.id)}

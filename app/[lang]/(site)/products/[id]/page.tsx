@@ -6,7 +6,8 @@ import { Home, ArrowLeft, ArrowRight } from "lucide-react";
 import { Metadata } from "next";
 import { cookies } from "next/headers";
 import { ProductProps } from "@/types/product"
-import ImageItem from "@/app/[lang]/(site)/products/[id]/_components/ImageItem";
+// import ImageItem from "@/app/[lang]/(site)/products/[id]/_components/ImageItem";
+import ImageItem from "@/app/[lang]/(site)/products/[id]/_components/ImageItemWithModal";
 import InfoItem from "@/app/[lang]/(site)/products/[id]/_components/InfoItem";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/shadcnUI/card";
 import { Separator } from "@/components/shadcnUI/separator";

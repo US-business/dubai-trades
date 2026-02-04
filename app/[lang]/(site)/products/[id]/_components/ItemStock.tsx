@@ -22,11 +22,11 @@ const ItemStock = ({ quantityInStock, dir }: ItemStockProps) => {
          )}>
             {dir === "rtl" ? (
                isInStock
-                  ? `متوفر (${quantityInStock} قطعة)${lowStock ? " - كمية محدودة!" : ""}`
+                  ? `متوفر ${lowStock ? " - كمية محدودة!" : ""}`
                   : "غير متوفر"
             ) : (
                isInStock
-                  ? `In Stock (${quantityInStock} items)${lowStock ? " - Limited!" : ""}`
+                  ? `In Stock ${lowStock ? " - Limited!" : ""}`
                   : "Out of Stock"
             )}
          </span>
