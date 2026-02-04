@@ -30,7 +30,7 @@ const ItemDetails = ({ dir, detailsAr, detailsEn, brand }: ItemDetailsProps) => 
                   <span className='rounded-full p-1 bg-green-100 flex-shrink-0 mt-0.5'>
                      <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-green-600" />
                   </span>
-                  <div className={cn("text-xs sm:text-sm text-gray-700 flex flex-col sm:grid sm:grid-cols-2 gap-1 sm:gap-2  min-w-0")}>
+                  <div className={cn("text-xs sm:text-sm text-gray-700 flex flex-col  gap-1 sm:gap-2  min-w-0")}>
                      <span className="font-medium text-gray-900 break-words">{detail.title} : </span>
                      <span className="text-gray-600 break-words">{detail.description}</span>
                   </div>
