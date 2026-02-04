@@ -89,7 +89,7 @@ const ImageItemWithModal = ({ product, dir }: { product: ProductProps, dir: stri
             {/* Modal for Large Image */}
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogContent
-                    className="max-w-[95vw] max-h-[95vh] w-[100%] h-[90%] p-0 overflow-hidden bg-slate-50 border-0"
+                    className="max-w-[95vw] max-h-[95vh] w-full h-[90%] p-0 overflow-hidden bg-slate-50 border-0"
                     dir={dir}
                 >
                     {/* Close Button */}
@@ -112,7 +112,7 @@ const ImageItemWithModal = ({ product, dir }: { product: ProductProps, dir: stri
                         <Image
                             src={productImages[selectedImage] || "/placeholder.svg"}
                             alt={dir === "rtl" ? product.nameAr : product.nameEn}
-                            className="object-cover w-[150%] h-auto max-w-full max-h-full rounded-lg"
+                            className="object-cover w-[100%] h-auto max-w-full max-h-full hover:scale-150 rounded-lg transition-transform duration-300"
                             width={1200}
                             height={1200}
                             priority
