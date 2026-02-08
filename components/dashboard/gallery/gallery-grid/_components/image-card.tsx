@@ -28,13 +28,13 @@ export function ImageCard({
 }: ImageCardProps) {
   return (
     <Card className="group overflow-hidden">
-      <div className="relative aspect-square">
+      <div className="relative  aspect-square">
         {image.url ? (
           <Image
             src={image.url}
             alt={image.altTextEn || image.fileName || 'Gallery image'}
             fill
-            className="object-cover transition-transform group-hover:scale-105"
+            className="object-contain transition-transform group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-100">

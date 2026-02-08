@@ -12,9 +12,9 @@ interface HeroCarouselProps {
 
 export const HeroCarousel: React.FC<HeroCarouselProps> = ({
   images = [
-    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767898095/gallery/wuy4qzbqvuunj6nfl0lv.png",
-    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1767817232/gallery/f5gc2vptgl8t0yr9u0qq.jpg",
-    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1770235974/gallery/u5qp21xoy7vzobbbukhq.jpg"
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1770250191/gallery/hmsjhjuom5i1yqzlcvjg.png",
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1770250618/gallery/yh65yauarodiye7gzymd.jpg",
+    "https://res.cloudinary.com/dvpp7fsht/image/upload/v1770251726/gallery/fc6ogrepieb3rtwgkbyw.jpg"
   ],
   className = ""
 }) => {

@@ -42,7 +42,7 @@ export function ImagePreviewCard({
                <img
                   src={previewUrl}
                   alt={image.fileName}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                />
             ) : (
                <span className="text-xs text-muted-foreground">

@@ -26,17 +26,18 @@ export function ImagePreviewDialog({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl">
+      <DialogContent className="max-w-3/4 h-auto sm:max-w-3/4 md:max-w-2/3 lg:max-w-1/2 xl:max-w-2/5 p-4 gap-4 bg-slate-50 border-0">
         <DialogHeader>
           <DialogTitle>{image.titleEn || image.fileName}</DialogTitle>
         </DialogHeader>
-        <div className="space-y-4">
-          <div className="relative aspect-video">
+        <div className="space-y-4 flex flex-col">
+          <div className="relative  aspect-square overflow-auto h-64 sm:h-80 md:h-96 lg:h-[400px] xl:h-[450px]">
             <Image
               src={image.url || ""}
               alt={image.altTextEn || image.fileName}
               fill
-              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-contain object-center w-full h-full rounded-lg"
             />
           </div>
 

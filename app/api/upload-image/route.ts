@@ -66,7 +66,7 @@ const handler = withErrorHandler(async (request: Request) => {
         folder: folder,
         resource_type: "image",
         transformation: [
-          { width: 400, height: 400, crop: "fill" },
+          { width: 1280, height: 1280 },
           { quality: "auto:good" },
           { fetch_format: "auto" }
         ],
